@@ -6,12 +6,21 @@ string[] array = { "hello", "2", "world", ":)" };
 
 void PrintArray(string[] arr)
 {
+    Console.Write("[");
     for (int i = 0; i < arr.Length; i++)
     {
         if (arr[i].Length <= 3)
         {
-            Console.Write(arr[i] + ", ");
+            if (i < arr.Length - 1)
+            {
+                Console.Write("\"" + arr[i] + "\", ");
+            }
+            else if (i == arr.Length - 1)
+            {
+                Console.Write("\"" + arr[i] + "\"]");
+            }
         }
+
     }
 }
 
