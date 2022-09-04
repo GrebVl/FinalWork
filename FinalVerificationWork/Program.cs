@@ -24,4 +24,24 @@ void PrintArray(string[] arr)
     }
 }
 
+string[] FillArray(int num)
+{
+    string[] ARRAY = new string[num];
+
+    Console.WriteLine("Заполнити массив через пробел");
+    string[] input = Console.ReadLine().Split();
+    for (int j = 0; j < ARRAY.Length; j++)
+    {
+        ARRAY[j] = input[j];
+    }
+
+    return ARRAY;
+}
+
+Console.WriteLine("Введите длину массива");
+int size = int.Parse(Console.ReadLine());
+
+string[] MyArray = FillArray(size);
+PrintArray(MyArray);
+Console.WriteLine();
 PrintArray(array);
