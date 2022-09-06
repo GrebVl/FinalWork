@@ -27,13 +27,15 @@ void PrintArray(string[] arr)
     Console.Write("]");
 }
 
-string[] FillArray(int num)
+string[] FillArray()
 {
-    string[] ARRAY = new string[num];
 
-    Console.WriteLine("Заполнити массив через запятую");
-    string[] input = Console.ReadLine().Split(",");
-    for (int j = 0; j < ARRAY.Length; j++)
+    Console.WriteLine("Заполнити массив через запятую c пробелом:");
+    Console.WriteLine("пример: 12, 1234, ghfh fhg");
+    string[] input = Console.ReadLine().Split(", ");
+    string[] ARRAY = new string[input.Length];
+
+    for (int j = 0; j < input.Length; j++)
     {
         ARRAY[j] = input[j];
     }
@@ -41,14 +43,15 @@ string[] FillArray(int num)
     return ARRAY;
 }
 
-Console.WriteLine("Введите длину массива");
-int size = int.Parse(Console.ReadLine());
 
-string[] MyArray = FillArray(size);
+string[] MyArray = FillArray();
 PrintArray(MyArray);
 Console.WriteLine();
+
 PrintArray(array);
 Console.WriteLine();
+
 PrintArray(array1);
 Console.WriteLine();
+
 PrintArray(array2);
