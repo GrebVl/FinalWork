@@ -3,6 +3,8 @@
 длина которых меньше либо равна 3 символа.
 */
 string[] array = { "hello", "2", "world", ":)" };
+string[] array1 = { "1234", "1567", "-2", "computer science" };
+string[] array2 = { "Russia", "Denmark", "Kazan" };
 
 void PrintArray(string[] arr)
 {
@@ -17,19 +19,20 @@ void PrintArray(string[] arr)
             }
             else if (i == arr.Length - 1)
             {
-                Console.Write("\"" + arr[i] + "\"]");
+                Console.Write("\"" + arr[i] + "\"");
             }
         }
 
     }
+    Console.Write("]");
 }
 
 string[] FillArray(int num)
 {
     string[] ARRAY = new string[num];
 
-    Console.WriteLine("Заполнити массив через пробел");
-    string[] input = Console.ReadLine().Split();
+    Console.WriteLine("Заполнити массив через запятую");
+    string[] input = Console.ReadLine().Split(",");
     for (int j = 0; j < ARRAY.Length; j++)
     {
         ARRAY[j] = input[j];
@@ -45,3 +48,7 @@ string[] MyArray = FillArray(size);
 PrintArray(MyArray);
 Console.WriteLine();
 PrintArray(array);
+Console.WriteLine();
+PrintArray(array1);
+Console.WriteLine();
+PrintArray(array2);
