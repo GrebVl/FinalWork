@@ -2,27 +2,20 @@
 Программа из массива строк формирует массив из строк, 
 длина которых меньше либо равна 3 символа.
 */
-string[] array = { "hello", "2", "world", ":)" };
-string[] array1 = { "1234", "1567", "-2", "computer science" };
-string[] array2 = { "Russia", "Denmark", "Kazan" };
 
 void PrintArray(string[] arr)
 {
     Console.Write("[");
     for (int i = 0; i < arr.Length; i++)
     {
-        if (arr[i].Length <= 3)
+        if (i < arr.Length - 1)
         {
-            if (i < arr.Length - 1)
-            {
-                Console.Write("\"" + arr[i] + "\", ");
-            }
-            else if (i == arr.Length - 1)
-            {
-                Console.Write("\"" + arr[i] + "\"");
-            }
+            Console.Write("\"" + arr[i] + "\", ");
         }
-
+        else if (i == arr.Length - 1)
+        {
+            Console.Write("\"" + arr[i] + "\"");
+        }
     }
     Console.Write("]");
 }
@@ -43,15 +36,57 @@ string[] FillArray()
     return ARRAY;
 }
 
+int SelectiontLingthArr(string[] ARR)
+{
+    int count = 0;
+    for (int i = 0; i < ARR.Length; i++)
+    {
+        if (ARR[i].Length <= 3)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+string[] SelectiontARRAY(string[] Arr, int size)
+{
+    string[] SelectArray = new string[size];
+
+    int i = 0;
+    for (int j = 0; j < Arr.Length; j++)
+    {
+        if (Arr[j].Length <= 3)
+        {
+            SelectArray[i] = Arr[j];
+            i++;
+        }
+    }
+
+    return SelectArray;
+}
+
+string[] array1 = { "hello", "2", "world", ":)" };
+string[] array2 = { "1234", "1567", "-2", "computer science" };
+string[] array3 = { "Russia", "Denmark", "Kazan" };
 
 string[] MyArray = FillArray();
-PrintArray(MyArray);
+int LengthSelectArray=SelectiontLingthArr(MyArray);
+string[] SelectArray = SelectiontARRAY(MyArray, LengthSelectArray);
+PrintArray(SelectArray);
+Console.WriteLine();
+ 
+int LengthSelectarray1=SelectiontLingthArr(array1);
+string[] SelectArray1 = SelectiontARRAY(array1, LengthSelectarray1);
+PrintArray(SelectArray1);
 Console.WriteLine();
 
-PrintArray(array);
+int LengthSelectarray2=SelectiontLingthArr(array2);
+string[] SelectArray2 = SelectiontARRAY(array2, LengthSelectarray2);
+PrintArray(SelectArray2);
 Console.WriteLine();
 
-PrintArray(array1);
+int LengthSelectarray3=SelectiontLingthArr(array2);
+string[] SelectArray3 = SelectiontARRAY(array3, LengthSelectarray3);
+PrintArray(SelectArray3);
 Console.WriteLine();
-
-PrintArray(array2);
